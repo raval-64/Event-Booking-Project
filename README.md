@@ -1,2 +1,2 @@
 # event-book-project
-This is the Django project for event booking. 
+This is the Django(python) project for event booking. 

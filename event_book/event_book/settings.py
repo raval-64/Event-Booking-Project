@@ -23,6 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'i)#qo@^8vl&s_7&7ym&sk42(vl-q_k#u%ko&03462x#ye_e%s!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# change Debug=false for local system
 DEBUG = True
 
 ALLOWED_HOSTS = []
@@ -121,4 +122,16 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static"),'/var/www/static/',]
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# please remove bottom variable for local system or change value to false 
+SECURE_CONTENT_TYPE_NOSNIFF = True
+SECURE_BROWSER_XSS_FILTER = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+X_FRAME_OPTIONS = 'DENY'
+SECURE_SSL_REDIRECT = False
+SECURE_HSTS_SECONDS = 259200
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True 
+SECURE_HSTS_PRELOAD = True

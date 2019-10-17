@@ -1,8 +1,10 @@
 # event-booking-project
 This is the Django(python) project for event booking. 
 ## Change for local system 
+### install python-pip
+### pip install -r requirements.txt
 ### Open Settings.py
-change debug=false<br>
+Change DEBUG = False<br>
 #### Delete this code from settings.py
 SECURE_CONTENT_TYPE_NOSNIFF = True<br>
 SECURE_BROWSER_XSS_FILTER = True<br>

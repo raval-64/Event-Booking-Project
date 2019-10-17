@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Event View</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="1234.css" rel="stylesheet" type="text/css">
-<!-- Latest compiled and minified CSS -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+{% extends 'event/base.html' %}
+{% block title %}Event View{% endblock %}
+{% block style %}
+<script>
+$(window).bind("pagehide", function() {
+	$('#myform').reset();
+});
+</script>
 <style type="text/css">
 body
 {
@@ -17,7 +13,7 @@ background: url(https://securepics.ebaystatic.com/aw/pics/cmp/ds3/imgbg.jpg) rep
 }
 	
 	/* Full-width input fields */
-  input[type=text], input[type=email] {
+  .textbox {
   width: 100%;
   padding: 15px;
   margin: 5px 0 22px 0;
@@ -26,7 +22,7 @@ background: url(https://securepics.ebaystatic.com/aw/pics/cmp/ds3/imgbg.jpg) rep
   background: #f1f1f1;
 }
 
-input[type=text]:focus, input[type=password]:focus {
+.textbox:focus {
   background-color: #ddd;
   outline: none;
 }
@@ -90,10 +86,10 @@ button:hover {
 	document.getElementById('id01').scrollIntoView();
 	}   
 </script>
-</head>
-<body>
+{% endblock %}
+{% block body %}
 	<br>
-	<div class="container" style="padding:1px;padding-right:40px;background-color: white;box-shadow: 0 1px 5px 0 rgba(0,0,0,0.16), 0 1px 5px 0 rgba(0,0,0,0.12);border-radius: 41px;">
+	<div class="container" style="padding:1px;padding-right:40px;background-color: white;box-shadow: 0 1px 5px 0 rgba(0,0,0,0.16), 0 1px 5px 0 rgba(0,0,0,0.12);border-radius: 11px;">
 	<div class="container" style="padding: 30px;padding-top: 30px;">
 		<div class="row">
 			<div class="col-sm-12" style="background-color: white;padding:10px;border-bottom: 1px solid rgba(0,0,0,0.16);border-top: 1px solid rgba(0,0,0,0.16);"><center><h4 style="font-weight: bold;">Event Description</h4></center>
@@ -101,35 +97,35 @@ button:hover {
 		</div>
 		<br>
 		<div class="row">
-	  		<div class="col-sm-8" style="padding-left: 0px;"><img src="https://res.cloudinary.com/dwzmsvp7f/image/fetch/q_75,f_auto,w_800/https%3A%2F%2Fmedia.insider.in%2Fimage%2Fupload%2Fc_crop%2Cg_custom%2Fv1568702020%2Fjiw9fkqyucdrh3bigoki.png" style="width: 100%;border: 7px solid white;"></div>
+	  		<div class="col-sm-8" style="padding-left: 0px;"><img src="{{ event_detail.image.url }}" style="width: 100%;border: 7px solid white;"></div>
   			<div class="col-sm-4" style="padding: 25px;background-color: white;border: 1px solid rgba(0,0,0,0.16);">
   				<br>
 
-  				<table class="table" cellpadding="30"  cellspacing="20">
+  				<table class="table">
 							      <tr>
 							      	<td style="border-top: none;font-weight: bold">Event</td>
-							        <td style="border-top: none;">OnePlus Music Festival, 2019</td>
+							        <td style="border-top: none;">{{ event_detail.name }}</td>
 							      </tr>
 							      <tr>
 							        <td style="font-weight: bold">Category</td>
-							        <td>Music</td>
+							        <td>{{ event_detail.category|capfirst }}</td>
 							      </tr>
 							      <tr>
 							        <td style="font-weight: bold">Date</td>
-							        <td>November 2019</td>
+							        <td>{{ event_detail.date }}</td>
 							      </tr>
 							      <tr>
 							        <td style="font-weight: bold">Start Time</td>
-							        <td>6 PM</td>
+							        <td>{{ event_detail.start_time }}</td>
 							      </tr>
 							      <tr>
 							        <td style="font-weight: bold">End Time</td>
-							        <td>10 PM</td>
+							        <td>{{ event_detail.end_time }}</td>
 							      </tr>
 							      
 							      <tr>
 							        <td style="font-weight: bold;">Price</td>
-							        <td>Rs.3000</td>
+							        <td>Rs.{{ event_detail.price }}</td>
 							      </tr>
 							      <tr>
 							        <td></td>
@@ -154,46 +150,53 @@ button:hover {
 		<div class="row">
 			<div class="col-sm-12" style="padding: 35px;padding-right:60px;padding-left:60px;background-color: white;"><h4 style="font-weight: bold;">Description</h4><hr size="2">
 				<div style="white-space: pre-line;">
-				A mix of prime international acts in a concert setting never seen before in India, with some of our homegrown Indian artists. This year, we merge the best in music and the power of tech to bring you an immersive experience, curated and designed by OnePlus. A celebration of music and community. This is OnePlus Music Festival.
-
-VIP and SuperFan tickets to go live soon.
-
-Line Up includes Katy Perry, Dua Lipa, Ritviz, Amit Trivedi, The Local Train, AWKS
-</div>			</div>
+						{{ event_detail.description }}
+				</div>			</div>
 		</div>
 	</div>
+	
 	<div class="container">
-
-<form action="action_page.php" >
+			<hr size="2">
+<form action=""  method="POST" id="myform">
+		{% csrf_token %}
   <div class="container1" id='id01'>
    <br> 
     <div class="row">
     
     <div class="col-sm-2"></div>
-    <div class="col-sm-8" style="padding-left: 35px;padding-right: 35px;padding-bottom: 25px;padding-top: 15px;border: 1px solid rgba(0,0,0,0.16);box-shadow: 0 1px 2px 0 rgba(0,0,0,0.16), 0 1px 1px 0 rgba(0,0,0,0.12);border-radius: 70px;">
+    <div class="col-sm-8" style="padding-left: 35px;padding-right: 35px;padding-bottom: 50px;padding-top: 15px;border: 1px solid rgba(0,0,0,0.16);box-shadow: 0 1px 2px 0 rgba(0,0,0,0.16), 0 1px 1px 0 rgba(0,0,0,0.12);border-radius: 25px;">
    <center> <h2>Booking Form</h2>
     <p>Please fill in this form to book.</p>
     </center>
     <hr>
 
-    <label for="name"><b>Name</b></label>
-      <input type="text" placeholder="Enter Name" name="name"  class="textbox" required>
-    <label for="email"><b>Email</b></label>
-    <input type="email" placeholder="Enter Email" name="email" required>
+	<label for="name"><b>Name</b></label>
+	{{form.name}}
+	{%if form.name.errors %}<div style="color:red">{{form.name.errors}}</div>{% endif %}
+	<label for="email"><b>Email</b></label>
+	{{form.email}}
+	{% if form.email.errors %}<div style="color:red">{{form.email.errors}}</div>{% endif %}
     <label for="mobile"><b>Mobile No.</b></label>
-    <input type="text" placeholder="Enter Mobile No." maxlength='10' name="mobile" pattern="[1-9]{1}[0-9]{9}" required>
+	{{form.mobile}}
+	{% if form.mobile.errors %}<div style="color:red">{{form.mobile.errors}}</div>{% endif %}
+	<input id="id_id" name="event" type="hidden" value="{{event_detail.id}}"> 
 <br><br>
-<button type="submit" class="signupbtn" style="width:100%;background-color:#576a58;">Book Now</button>
-
+<div style="width: inherit;margin-left: auto;margin-right: auto;">
+<button type="submit" class="signupbtn" style="width:100%;background-color:#576a58;border-radius: 100px;">Book Now</button>
 </div>
-  <div class="col-sm-2"></div>
-</div><br> <br>
+
+  <div class="col-sm-2"><br></div>
+  <br>
+</div><br>
 <br>  
 </form>
 </div>
 </div>
 </div>
 <br>
+<br>
+<br>
+</div>
+<br>
 <br> 
-</body>
-</html>
+{% endblock %}

@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import event, booking 
+from .models import event, booking
+from django.contrib.admin.actions import delete_selected as django_delete_selected
 # Register your models here.
 
 @admin.register(event)

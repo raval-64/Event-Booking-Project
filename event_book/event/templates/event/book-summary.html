@@ -1,9 +1,72 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
 
-</body>
-</html>
+{% extends 'event/base.html' %}
+{% block title %}Book Summary{% endblock %}
+{% block style %}
+<script>
+$(document).ready(function() {
+    function disableBack() { window.history.forward() }
+
+    window.onload = disableBack();
+    window.onpageshow = function(evt) { if (evt.persisted) disableBack() }
+});
+</script>
+<style>
+body
+{
+background: url(https://securepics.ebaystatic.com/aw/pics/cmp/ds3/imgbg.jpg) repeat 0 0 #f8f8f8;
+}
+</style>
+{% endblock %}
+{% block body %}
+	<br>
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12" style="background-color: white;border:1px solid #dee2e6;padding: 20px;padding-top: 20px;padding-bottom: 17px;">
+			<center><h4>Booking Summary</h4></center>
+		</div>
+	</div>
+	<br>
+			  <table class="table table-bordered" style="background-color: white;">
+					<tbody class="thead-light">
+						<tr>
+						  <th>Book ID</th>
+							<td>{{context.id}}</td>	
+						</tr>
+						<tr>		
+								<tr>
+										<th>Event Name</th>
+										  <td>{{event.name}}</td>
+									  </tr>	  
+								<tr>
+								<tr>
+									<th>Event Date</th>
+									<td>{{event.date}}</td>
+								</tr>	  
+								<tr>
+										<th>Event Start Time</th>
+										<td>{{event.start_time}}</td>
+									</tr>	  
+								
+							<tr>
+							
+								<th>Name</th>
+								  <td>{{context.name}}</td>
+							  </tr>
+							  <tr>
+								<th>Email</th>
+								  <td>{{context.email}}</td>
+							  </tr>
+							  <tr>
+								  <th>Mobile No.</th>
+								  <td>{{context.mobile}}</td>
+							  </tr>
+							  <tr>
+									<th>Price.</th>
+									<td>{{event.price}}</td>
+								</tr>
+						
+							  
+					</tbody>
+				</table>
+</div>
+{% endblock %}

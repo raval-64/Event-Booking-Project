@@ -39,7 +39,7 @@ class event(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("event_detail", kwargs={"pk": self.pk})
+        return reverse("event:event_view", kwargs={"id": self.pk})
     
     def image_tag(self):
         return format_html('<a href="{0}"><img src="{0}" width="250px" height="150px"></a>'.format(self.image.url))
@@ -56,9 +56,12 @@ class booking(models.Model):
     class Meta:
         verbose_name = "booking"
         verbose_name_plural = "bookings"
+    
+    def delete(self, using=None, keep_parents=False):
+        m = event.objects.get(id=self.event.id)
+        m.booked_seats = m.booked_seats - 1
+        m.save()
+        return super().delete(using=using, keep_parents=keep_parents)
 
     def __str__(self):
         return self.name
-
-    def get_absolute_url(self):
-        return reverse("booking_detail", kwargs={"pk": self.pk})

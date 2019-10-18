@@ -23,8 +23,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'i)#qo@^8vl&s_7&7ym&sk42(vl-q_k#u%ko&03462x#ye_e%s!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# change Debug=false for local system
-DEBUG = True
+# change Debug=True for local system
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -133,5 +133,5 @@ CSRF_COOKIE_SECURE = True
 X_FRAME_OPTIONS = 'DENY'
 SECURE_SSL_REDIRECT = False
 SECURE_HSTS_SECONDS = 259200
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True 
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True

@@ -12,5 +12,10 @@ class EventAdmin(admin.ModelAdmin):
 
 @admin.register(booking)
 class EventAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email','mobile','event')
-    list_filter = ('event__name',"email", "mobile")
+    list_display = ('name', 'email','mobile','event','get_category')
+    list_filter = ('event__name','event__category',"email", "mobile")
+    
+    def get_category(self, obj):
+        return obj.event.category
+    get_category.short_description = 'Category'
+    get_category.admin_order_field = 'event__category'

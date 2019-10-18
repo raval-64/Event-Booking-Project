@@ -4,7 +4,7 @@ This is the Django(python) project for event booking.
 ### install python-pip
 ### pip install -r requirements.txt
 ### Open Settings.py
-Change DEBUG = False<br>
+Change DEBUG = True<br>
 #### Delete this code from settings.py
 SECURE_CONTENT_TYPE_NOSNIFF = True<br>
 SECURE_BROWSER_XSS_FILTER = True<br>

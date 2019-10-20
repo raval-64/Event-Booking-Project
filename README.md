@@ -1,4 +1,4 @@
-# event-booking-project
+# Event Booking Project   :ticket:
 This is the Django(python) project for event booking. 
 ## Change for local system 
 ### install python-pip

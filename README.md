@@ -4,13 +4,13 @@
 The event booking project is a web application based on the event booking system and has been developed in `Django(Python)`. `sqllite3` is used for database management. `HTML`, `CSS`, `Javascript` and `Bootstrap` are used for the front end of the project. 
 
 **Features** 
-* User
+* User(url:'/')
     - User can view all events.
     - User can view event details.
     - User can book event in event details.
     - Users can view booking summary after booking event.
 
-* Organizer
+* Organizer(url:'/admin')
     - Organizer can perform [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations on the event.
     - Organizer can view bookings information such as name, email, mobile number, booked event.
     - Organizer can filter event bookings by category.
@@ -62,4 +62,6 @@ The event booking project is a web application based on the event booking system
 3. [django-phonenumber-field](https://github.com/stefanfoulis/django-phonenumber-field) - Django library which interfaces with python-phonenumbers to validate, pretty print and convert phone numbers.
 
 4. [Pillow](https://pillow.readthedocs.io/en/stable/) - PIL is the Python Imaging Library by Fredrik Lundh and Contributors.
+
+
 

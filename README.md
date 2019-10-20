@@ -1,7 +1,15 @@
 # Event Booking Project   :ticket:
 
 ### Introduction
-The event booking project is a web application based on the event booking system and has been developed in `Django(Python)`. HTML, CSS, Javascript and CSS bootstrap frameworks are used for the project. 
+The event booking project is a web application based on the event booking system and has been developed in `Django(Python)`. `HTML`, `CSS`, `Javascript` and `CSS bootstrap` frameworks are used for the project. 
+
+**Features** 
+* User:
+    - User can view all events
+    - User can view event details
+    - User can book event in event details
+    - Users can view booking summary after booking events.
+
 ## Change for local system 
 ### install python-pip
 ### pip install -r requirements.txt

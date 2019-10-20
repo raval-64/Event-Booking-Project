@@ -3,6 +3,8 @@
 ### Introduction
 The event booking project is a web application based on the event booking system and has been developed in `Django(Python)`. `sqllite3` is used for database management. `HTML`, `CSS`, `Javascript` and `Bootstrap` are used for the front end of the project. 
 
+The user can view all events on the home page. If the event is full then it will be automatically removed from the home page. User can click on any event on the home page for event details. And the event will be shown by their ID. On the event details page, the user can book an event with the booking form. After booking the event the user will redirect to the booking summary page. Details like booking ID and booking details will appear on the summary page.
+
 **Features** 
 * User(url:`/`)
     - User can view all events.
@@ -63,5 +65,5 @@ The event booking project is a web application based on the event booking system
 
 4. [Pillow](https://pillow.readthedocs.io/en/stable/) - PIL is the Python Imaging Library by Fredrik Lundh and Contributors.
 
-
+### Backend Dependencies:
 

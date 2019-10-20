@@ -5,14 +5,20 @@ The event booking project is a web application based on the event booking system
 
 The user can view all events on the home page. If the event is full then it will be automatically removed from the home page. User can click on any event on the home page for event details. And the event will be shown by their ID. On the event details page, the user can book an event with the booking form. After booking the event the user will redirect to the booking summary page. Details like booking ID and booking details will appear on the summary page.
 
+The organizer can perform tasks like add / update / view / delete in the event. Organizers can view all bookings and filter bookings according to their category.
+
+* organizer id and password
+ 	- ID : test
+ 	- Password : mypass13
+
 **Features** 
-* User(url:`/`)
+* User (url:`/`)
     - User can view all events.
     - User can view event details.
     - User can book event in event details.
     - Users can view booking summary after booking event.
 
-* Organizer(url:`/admin`)
+* Organizer (url:`/admin`)
     - Organizer can perform [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations on the event.
     - Organizer can view bookings information such as name, email, mobile number, booked event.
     - Organizer can filter event bookings by category.
@@ -64,6 +70,4 @@ The user can view all events on the home page. If the event is full then it will
 3. [django-phonenumber-field](https://github.com/stefanfoulis/django-phonenumber-field) - Django library which interfaces with python-phonenumbers to validate, pretty print and convert phone numbers.
 
 4. [Pillow](https://pillow.readthedocs.io/en/stable/) - PIL is the Python Imaging Library by Fredrik Lundh and Contributors.
-
-### Backend Dependencies:
 

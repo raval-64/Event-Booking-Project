@@ -8,7 +8,7 @@ The event booking project is a web application based on the event booking system
     - User can view all events
     - User can view event details
     - User can book event in event details
-    - Users can view booking summary after booking events.
+    - Users can view booking summary after booking event.
 
 ## Change for local system 
 ### install python-pip

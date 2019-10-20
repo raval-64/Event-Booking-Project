@@ -32,10 +32,26 @@ The event booking project is a web application based on the event booking system
 	* ``` cd event-booking-project ```  
 
 * Install the app's dependencies. I advice using a [virtual environment](http://docs.python-guide.org/en/latest/dev/virtualenvs/)  
-	* ``` pip install -r requirements.txt ```  
+	* ``` pip install -r requirements.txt ``` 
+* Change some code from the project because the project is set for deployment, so it needs to be set for the local environment first.  
+	* ``` cd event_book ```
+	* ``` update settings.py ```
+		* ``` DEBUG = True ```
+		* ``` delete this code from file ```
+		
+		```
+		SECURE_CONTENT_TYPE_NOSNIFF = True
+		SECURE_BROWSER_XSS_FILTER = True
+		SESSION_COOKIE_SECURE = True
+		CSRF_COOKIE_SECURE = True
+		X_FRAME_OPTIONS = 'DENY'
+		SECURE_SSL_REDIRECT = False
+		SECURE_HSTS_SECONDS = 259200
+		SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+		SECURE_HSTS_PRELOAD = True
+		```
 * Run the app  
-	* ` python manage.py runserver ` for interactive mode  
-
+	* ` python manage.py runserver ` 
 
 ### Open Settings.py
 Change DEBUG = True<br>

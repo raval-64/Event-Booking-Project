@@ -53,3 +53,13 @@ The event booking project is a web application based on the event booking system
 * Run the app  
 	* ` python manage.py runserver ` 
 
+### Backend Dependencies:
+
+1. [Django](https://www.djangoproject.com/) - Django is a Python-based free and open-source web framework, which follows the model-template-view architectural pattern.
+
+2. [SQlite](https://www.sqlite.org/index.html) - This is a light-weight relational database that eventbuzz uses to store event data.
+
+3. [django-phonenumber-field](https://github.com/stefanfoulis/django-phonenumber-field) - Django library which interfaces with python-phonenumbers to validate, pretty print and convert phone numbers.
+
+4. [Pillow](https://pillow.readthedocs.io/en/stable/) - PIL is the Python Imaging Library by Fredrik Lundh and Contributors.
+

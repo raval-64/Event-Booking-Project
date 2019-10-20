@@ -4,13 +4,13 @@
 The event booking project is a web application based on the event booking system and has been developed in `Django(Python)`. `sqllite3` is used for database management. `HTML`, `CSS`, `Javascript` and `Bootstrap` are used for the front end of the project. 
 
 **Features** 
-* User(url:'/')
+* User(url:`/`)
     - User can view all events.
     - User can view event details.
     - User can book event in event details.
     - Users can view booking summary after booking event.
 
-* Organizer(url:'/admin')
+* Organizer(url:`/admin`)
     - Organizer can perform [CRUD](https://en.wikipedia.org/wiki/Create,_read,_update_and_delete) operations on the event.
     - Organizer can view bookings information such as name, email, mobile number, booked event.
     - Organizer can filter event bookings by category.

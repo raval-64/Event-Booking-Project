@@ -1,7 +1,7 @@
 # Event Booking Project   :ticket:
 
 ### Introduction
-The event booking project is a web application based on the event booking system and has been developed in `Django(Python)`. `sqllite3` is used for database management. `HTML`, `CSS`, `Javascript` and `CSS bootstrap` frameworks are used for the front end of the project. 
+The event booking project is a web application based on the event booking system and has been developed in `Django(Python)`. `sqllite3` is used for database management. `HTML`, `CSS`, `Javascript` and `Bootstrap` are used for the front end of the project. 
 
 **Features** 
 * User
@@ -15,9 +15,28 @@ The event booking project is a web application based on the event booking system
     - Organizer can view bookings information such as name, email, mobile number, booked event.
     - Organizer can filter event bookings by category.
 
-## Change for local system 
-### install python-pip
-### pip install -r requirements.txt
+### Installation and setup:  
+
+* Navigate to a directory of choice on terminal.  
+
+* Clone this repository from Github on that directory.  
+
+	* Using SSH;
+ 		> ` git@github.com:raval-64/event-booking-project.git `  
+
+	* Using HTTP;
+		>  ` https://github.com/raval-64/event-booking-project.git `  
+
+
+* Navigate to the repo's folder on your computer  
+	* ``` cd event-booking-project ```  
+
+* Install the app's dependencies. I advice using a [virtual environment](http://docs.python-guide.org/en/latest/dev/virtualenvs/)  
+	* ``` pip install -r requirements.txt ```  
+* Run the app  
+	* ` python manage.py runserver ` for interactive mode  
+
+
 ### Open Settings.py
 Change DEBUG = True<br>
 #### Delete this code from settings.py

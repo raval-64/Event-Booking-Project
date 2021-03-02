@@ -38,7 +38,7 @@ The organizer can perform tasks like add / update / view / delete in the event. 
 
 * Navigate to the repo's folder on your computer  
 	* ``` cd event-booking-project ```  
-+   Create .env file in movie_api.
++   Create .env file in event_book.
     
     - make copy of env.sample with rename .env.
     - add env variable values.

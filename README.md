@@ -38,26 +38,18 @@ The organizer can perform tasks like add / update / view / delete in the event. 
 
 * Navigate to the repo's folder on your computer  
 	* ``` cd event-booking-project ```  
++   Create .env file in movie_api.
+    
+    - make copy of env.sample with rename .env.
+    - add env variable values.
 
-* Install the app's dependencies. I advice using a [virtual environment](http://docs.python-guide.org/en/latest/dev/virtualenvs/)  
-	* ``` pip install -r requirements.txt ``` 
-* Change some code from the project because the project is set for deployment, so it needs to be set for the local environment first.  
-	* ``` cd event_book ```
-	* ``` update settings.py ```
-		* ``` DEBUG = True ```
-		* ``` delete this code from file ```
-		
-		```
-		SECURE_CONTENT_TYPE_NOSNIFF = True
-		SECURE_BROWSER_XSS_FILTER = True
-		SESSION_COOKIE_SECURE = True
-		CSRF_COOKIE_SECURE = True
-		X_FRAME_OPTIONS = 'DENY'
-		SECURE_SSL_REDIRECT = False
-		SECURE_HSTS_SECONDS = 259200
-		SECURE_HSTS_INCLUDE_SUBDOMAINS = True
-		SECURE_HSTS_PRELOAD = True
-		```
++  Install the app's dependencies. I advice using a [virtual environment](http://docs.python-guide.org/en/latest/dev/virtualenvs/).
+    
+	- `cd event_book`
+    - `python -m venv .venv`
+    - `source .venv/bin/activate`
+    - `pip install -r requirements.txt`
+
 * Run the app  
 	* ` python manage.py runserver ` 
 
